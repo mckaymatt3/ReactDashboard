@@ -1,8 +1,15 @@
 import React from 'react'
 
-function Button() {
+function Button({icon, bgColor, color, bgHoverColor, size, text, borderRadius, width}) {
   return (
-    <div>Button</div>
+    <button
+    type="button"
+    // onClick={() => setIsClicked(initialState)}
+    style={{ backgroundColor: bgColor, color, borderRadius }}
+    className={` text-${size} p-3 hover: drop-shadow-xl`}
+  >
+    {text}
+  </button>
   )
 }
 
