@@ -7,20 +7,33 @@ import { cartData } from '../data/dummy';
 import { Button } from '.';
 
 const Cart = () => {
-  const { currentColor } = useStateContext();
+  const { currentColor, isClicked, setIsClicked, initialState } = useStateContext();
+
+  console.log(initialState)
 
   return (
     <div className="bg-half-transparent w-full fixed nav-item top-0 right-0 ">
       <div className="float-right h-screen  duration-1000 ease-in-out dark:text-gray-200 transition-all dark:bg-[#484B52] bg-white md:w-400 p-8">
         <div className="flex justify-between items-center">
           <p className="font-semibold text-lg">Shopping Cart</p>
-          <Button
+          <button
+                  type="button"
+                  onClick={() => setIsClicked(initialState)}
+                  color="rgb(153, 171, 180)"
+                  style={{ color: currentColor, borderRadius: '50%' }}
+                  className="text-2xl p-3 w-undefined hover:drop-shadow-xl hover:bg-light-gray rounded-full"
+                  // borderRadius="50%"
+          >
+            {<MdOutlineCancel />}
+          </button>
+          {/* <Button
             icon={<MdOutlineCancel />}
+            className="text-2xl p-3 w-undefined hover:drop-shadow-xl hover:bg-light-gray"
             color="rgb(153, 171, 180)"
             bgHoverColor="light-gray"
             size="2xl"
             borderRadius="50%"
-          />
+          /> */}
         </div>
         {cartData?.map((item, index) => (
           <div key={index}>
@@ -54,13 +67,25 @@ const Cart = () => {
           </div>
         </div>
         <div className="mt-5">
-          <Button
+          {/* <Button
             color="white"
             bgColor={currentColor}
             text="Place Order"
             borderRadius="10px"
             width="full"
-          />
+            // onClick={console.log("clicked")}
+            // onClick={() => setIsClicked(false)}
+          /> */}
+          <button
+            type="button"
+            onClick={() => setIsClicked(initialState)}
+            color="rgb(153, 171, 180)"
+            style={{ backgroundColor: currentColor, borderRadius: "10px" }}
+            className="text-xl p-3 w-full hover:drop-shadow-xl hover:bg-light-gray"
+            // borderRadius="50%"
+          >
+            Place Order
+          </button>
         </div>
       </div>
     </div>

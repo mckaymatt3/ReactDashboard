@@ -32,6 +32,7 @@ const Sidebar = () => {
                 type="button"
                 onClick={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
                 // issues with x button caused by md:hidden below
+                style={{ color: currentColor, borderRadius: '50%' }}
                 className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block"
               >
                 <MdOutlineCancel />
