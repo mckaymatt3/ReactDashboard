@@ -6,7 +6,7 @@ import { chatData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Notification = () => {
-  const { currentColor } = useStateContext();
+  const { currentColor, isClicked, setIsClicked, initialState } = useStateContext();
 
   return (
     <div className="nav-item absolute right-5 md:right-40 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96">
@@ -15,7 +15,16 @@ const Notification = () => {
           <p className="font-semibold text-lg dark:text-gray-200">Notifications</p>
           <button type="button" className="text-white text-xs rounded p-1 px-2 bg-orange-theme "> 5 New</button>
         </div>
-        <Button icon={<MdOutlineCancel />} color="rgb(153, 171, 180)" bgHoverColor="light-gray" size="2xl" borderRadius="50%" />
+        <button
+          type="button"
+          onClick={() => setIsClicked(initialState)}
+          color="rgb(153, 171, 180)"
+          style={{ color: currentColor, borderRadius: '50%' }}
+          className="text-2xl p-3 w-undefined hover:drop-shadow-xl hover:bg-light-gray rounded-full"
+          // borderRadius="50%"
+          >
+            {<MdOutlineCancel />}
+          </button>
       </div>
       <div className="mt-5 ">
         {chatData?.map((item, index) => (
@@ -28,7 +37,16 @@ const Notification = () => {
           </div>
         ))}
         <div className="mt-5">
-          <Button color="white" bgColor={currentColor} text="See all notifications" borderRadius="10px" width="full" />
+        <button
+            type="button"
+            onClick={() => setIsClicked(initialState)}
+            color="rgb(153, 171, 180)"
+            style={{ backgroundColor: currentColor, borderRadius: "10px", color: "white" }}
+            className="text-xl p-3 w-full hover:drop-shadow-xl hover:bg-light-gray"
+            // borderRadius="50%"
+          >
+            See All Notifications
+          </button>
         </div>
       </div>
     </div>

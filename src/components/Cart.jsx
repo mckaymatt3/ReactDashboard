@@ -80,7 +80,7 @@ const Cart = () => {
             type="button"
             onClick={() => setIsClicked(initialState)}
             color="rgb(153, 171, 180)"
-            style={{ backgroundColor: currentColor, borderRadius: "10px" }}
+            style={{ backgroundColor: currentColor, borderRadius: "10px", color: "white" }}
             className="text-xl p-3 w-full hover:drop-shadow-xl hover:bg-light-gray"
             // borderRadius="50%"
           >
