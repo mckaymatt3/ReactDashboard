@@ -62,7 +62,7 @@ const Navbar = () => {
                     icon={<BsChatLeft />}
                 />
                 <NavButton 
-                    title="Notifications"
+                    title="Notification"
                     dotColor="#03C9D7"
                     customFunc={() => handleClick('notification')} 
                     color={currentColor} 
