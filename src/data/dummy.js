@@ -621,7 +621,7 @@ export const earningData = [
   },
   {
     icon: <HiOutlineRefresh />,
-    amount: '39,354',
+    amount: '2,354',
     percentage: '-12%',
     title: 'Refunds',
     iconColor: 'rgb(0, 194, 146)',
