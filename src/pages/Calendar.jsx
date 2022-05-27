@@ -12,7 +12,7 @@ const Calendar = () => {
       <ScheduleComponent
         height="650px"
         // ref={(schedule) => setScheduleObj(schedule)}
-        selectedDate={new Date(2021, 0, 10)}
+        selectedDate={new Date(2022, 0, 9)}
         eventSettings={{ dataSource: scheduleData }}
         // dragStart={onDragStart}
       >
